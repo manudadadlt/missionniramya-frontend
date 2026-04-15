@@ -112,9 +112,9 @@ export default function CoursesAdminPage() {
         )})}
 
       </div>
-      <style dangerouslySetInnerHTML={{__html: \`
+      <style dangerouslySetInnerHTML={{__html: `
         @keyframes spin { 100% { transform: rotate(360deg); } }
-      \`}} />
+      `}} />
 
     </div>
   );

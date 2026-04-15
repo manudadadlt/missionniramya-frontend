@@ -97,7 +97,6 @@ export default function LeadsCRMPage() {
         @keyframes spin { 100% { transform: rotate(360deg); } }
       `}} />
 
-      </div>
     </div>
   );
 }

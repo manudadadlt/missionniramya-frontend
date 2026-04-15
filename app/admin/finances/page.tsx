@@ -78,7 +78,7 @@ export default function FinancesPage() {
           const v = inv.attributes || inv;
           return (
           <div key={inv.id} style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 1.5fr 1fr 1fr 1fr 1.5fr', gap: '20px', padding: '24px 30px', borderBottom: '1px solid rgba(255,255,255,0.02)', alignItems: 'center' }}>
-            <div style={{ color: '#00E5FF', fontWeight: 800, fontSize: '0.9rem' }}>{v.invoiceId || \`INV-\${inv.id}\`}</div>
+            <div style={{ color: '#00E5FF', fontWeight: 800, fontSize: '0.9rem' }}>{v.invoiceId || `INV-${inv.id}`}</div>
             <div style={{ fontWeight: 800 }}>{v.studentName}</div>
             <div style={{ color: 'rgba(255,255,255,0.6)' }}>{v.courseName}</div>
             <div style={{ fontWeight: 700 }}>₹{(v.totalFee || 0).toLocaleString()}</div>
@@ -107,9 +107,9 @@ export default function FinancesPage() {
           </div>
         )})}
       </div>
-      <style dangerouslySetInnerHTML={{__html: \`
+      <style dangerouslySetInnerHTML={{__html: `
         @keyframes spin { 100% { transform: rotate(360deg); } }
-      \`}} />
+      `}} />
 
     </div>
   );
