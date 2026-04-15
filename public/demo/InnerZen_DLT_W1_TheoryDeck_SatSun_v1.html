@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DLT Week 1 · Theory Deck · अन्तःकरण चतुष्टय + सम्मोहन चिकित्सा नींव</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html{font-size:20px;}
+:root{--navy:#0D1B4B;--gold:#C9A84C;--cream:#FAFAF5;--gold-light:#F5EED6;--deep:#070E27;--teal:#2D8B75;--rose:#D4556B;--indigo:#4A2E7A;--text:#2C2C2C;--muted:#6B7280;--accent:#5B3A8C;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--deep);color:#fff;line-height:1.7;overflow:hidden;height:100vh;width:100vw;}
+
+/* ══ TAB BAR ══ */
+.tab-bar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(7,14,39,0.97);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:2px solid var(--gold);height:50px;}
+.tab-left{display:flex;align-items:center;gap:6px;}
+.tab-brand{font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:0.7rem;font-weight:700;}
+.tab-group{display:flex;gap:0;}
+.tab-btn{font-family:'Montserrat',sans-serif;font-size:0.5rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:14px 22px;border:none;background:transparent;color:rgba(255,255,255,0.5);cursor:pointer;transition:all .2s;border-bottom:3px solid transparent;}
+.tab-btn:hover{color:rgba(255,255,255,0.8);}
+.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold);background:rgba(201,168,76,0.06);}
+.tab-right{display:flex;align-items:center;gap:8px;}
+.nav-btn{font-family:'Montserrat',sans-serif;font-size:0.5rem;font-weight:700;padding:8px 16px;border:1.5px solid rgba(255,255,255,0.2);border-radius:6px;background:transparent;color:rgba(255,255,255,0.7);cursor:pointer;transition:all .2s;letter-spacing:1px;}
+.nav-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,0.1);}
+.slide-counter{font-family:'Montserrat',sans-serif;font-size:0.5rem;color:var(--gold);min-width:55px;text-align:center;letter-spacing:1px;}
+.progress-track{position:fixed;top:50px;left:0;right:0;height:3px;background:rgba(255,255,255,0.08);z-index:199;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--teal));transition:width .3s;width:0%;}
+
+/* ══ DECK CONTAINER ══ */
+.deck{display:none;width:100%;height:100vh;}
+.deck.active{display:block;}
+
+/* ══ SLIDES ══ */
+.sl{display:none;width:100%;height:calc(100vh - 53px);margin-top:53px;overflow-y:auto;padding:40px;position:relative;}
+.sl.on{display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.sl-inner{max-width:900px;width:100%;text-align:center;}
+
+/* ══ SLIDE TYPES ══ */
+.sl-title{background:linear-gradient(160deg,var(--deep) 0%,var(--navy) 50%,var(--indigo) 100%);}
+.sl-content{background:linear-gradient(160deg,var(--navy) 0%,#0f2057 100%);}
+.sl-story{background:linear-gradient(160deg,#1a1030 0%,#2a1a3a 100%);}
+.sl-science{background:linear-gradient(160deg,#0a1a3a 0%,#0d2b4b 100%);}
+.sl-practice{background:linear-gradient(160deg,#0a2a1a 0%,#0d3b2b 100%);}
+.sl-close{background:linear-gradient(160deg,var(--indigo) 0%,var(--deep) 50%,var(--navy) 100%);}
+
+/* ══ TYPOGRAPHY ══ */
+.s-phase{font-family:'Montserrat',sans-serif;font-size:0.5rem;letter-spacing:6px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px;}
+.s-week{font-family:'Montserrat',sans-serif;font-size:0.55rem;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.s-h1{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:8px;}
+.s-h1 span{color:var(--gold);}
+.s-hindi{font-size:1.3rem;color:rgba(255,255,255,0.65);margin-bottom:15px;}
+.s-div{width:60px;height:3px;background:var(--gold);margin:20px auto;}
+.s-sub{font-size:0.95rem;color:rgba(255,255,255,0.55);font-style:italic;max-width:650px;margin:0 auto;}
+.s-meta{font-family:'Montserrat',sans-serif;font-size:0.42rem;letter-spacing:2px;color:rgba(255,255,255,0.25);margin-top:25px;text-transform:uppercase;}
+
+.s-h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:#fff;line-height:1.25;margin-bottom:5px;}
+.s-h2 span{color:var(--gold);}
+.s-h2-hi{font-size:1.1rem;color:rgba(255,255,255,0.6);margin-bottom:20px;}
+.s-body{font-size:1rem;line-height:1.75;color:rgba(255,255,255,0.85);text-align:left;max-width:800px;margin:0 auto;}
+.s-body strong{color:var(--gold);}
+
+/* ══ CARDS ══ */
+.s-cards{display:grid;gap:16px;margin-top:20px;max-width:850px;width:100%;}
+.s-cards.c2{grid-template-columns:1fr 1fr;}
+.s-cards.c4{grid-template-columns:1fr 1fr;}
+.s-card{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.15);border-radius:12px;padding:20px;text-align:left;transition:all .3s;}
+.s-card:hover{border-color:var(--gold);background:rgba(201,168,76,0.05);}
+.s-card .sc-icon{font-size:1.8rem;margin-bottom:8px;}
+.s-card h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--gold);margin-bottom:3px;}
+.s-card .sc-hindi{font-size:0.85rem;color:rgba(255,255,255,0.5);margin-bottom:8px;}
+.s-card p{font-size:0.82rem;line-height:1.65;color:rgba(255,255,255,0.75);}
+
+/* ══ QUOTE ══ */
+.s-quote{border-top:1px solid rgba(201,168,76,0.2);border-bottom:1px solid rgba(201,168,76,0.2);padding:25px 35px;margin:20px auto;max-width:700px;font-style:italic;font-size:1.1rem;color:rgba(255,255,255,0.8);line-height:1.8;}
+.s-quote .sq-src{font-family:'Montserrat',sans-serif;font-size:0.5rem;font-style:normal;color:var(--gold);letter-spacing:2px;margin-top:10px;text-transform:uppercase;}
+
+/* ══ MANU ══ */
+.s-manu{background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:12px;padding:22px 28px;max-width:750px;margin:20px auto;text-align:left;}
+.s-manu h3{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--gold);margin-bottom:8px;}
+.s-manu p{font-size:0.88rem;line-height:1.7;color:rgba(255,255,255,0.8);}
+
+/* ══ SCIENCE BOX ══ */
+.s-scibox{background:rgba(45,139,117,0.08);border:1px solid rgba(45,139,117,0.2);border-radius:12px;padding:22px 28px;max-width:750px;margin:20px auto;text-align:left;}
+.s-scibox h3{font-family:'Montserrat',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:8px;}
+.s-scibox p{font-size:0.85rem;line-height:1.7;color:rgba(255,255,255,0.75);}
+
+/* ══ KEY POINT ══ */
+.s-key{display:flex;gap:15px;align-items:flex-start;max-width:800px;margin:12px auto;padding:14px 18px;background:rgba(255,255,255,0.03);border-radius:10px;text-align:left;}
+.s-key .sk-num{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--gold);min-width:35px;text-align:center;line-height:1;}
+.s-key .sk-content{flex:1;}
+.s-key h4{font-family:'Montserrat',sans-serif;font-size:0.65rem;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:3px;}
+.s-key p{font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.75);}
+
+.s-emoji-big{font-size:3rem;margin-bottom:15px;}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:768px){html{font-size:17px;}.s-h1{font-size:1.8rem;}.sl{padding:25px 18px;}.s-cards.c2,.s-cards.c4{grid-template-columns:1fr;}.tab-brand{display:none;}.tab-btn{padding:12px 14px;font-size:0.42rem;}}
+@media(max-width:600px){html{font-size:15px;}.s-h1{font-size:1.5rem;}.s-h2{font-size:1.3rem;}}
+@media print{.tab-bar,.progress-track{display:none;}.sl{display:flex;page-break-after:always;margin-top:0;height:auto;min-height:100vh;}}
+</style>
+</head>
+<body>
+
+<!-- ══ TAB BAR ══ -->
+<div class="tab-bar">
+  <div class="tab-left">
+    <div class="tab-brand">📖 W1 Theory</div>
+    <div class="tab-group">
+      <button class="tab-btn active" onclick="switchDeck('sat')">शनिवार SAT · Antahkarana</button>
+      <button class="tab-btn" onclick="switchDeck('sun')">रविवार SUN · Hypnotherapy</button>
+    </div>
+  </div>
+  <div class="tab-right">
+    <button class="nav-btn" onclick="prevSlide()">◀ Prev</button>
+    <span class="slide-counter" id="slideCounter">1 / 14</span>
+    <button class="nav-btn" onclick="nextSlide()">Next ▶</button>
+  </div>
+</div>
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SATURDAY DECK — ANTAHKARANA CHATUSHTAYA    -->
+<!-- 14 Slides · Day 1 · शनिवार                 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="deck active" id="deck-sat">
+
+<!-- S1: Title -->
+<div class="sl sl-title on" data-n="1">
+  <div class="sl-inner">
+    <div class="s-phase">Phase 1: Decode · चरण 1: डिकोड</div>
+    <div class="s-week">Week 1 · Day 1 · Saturday · शनिवार सिद्धांत</div>
+    <div class="s-h1"><span>अन्तःकरण चतुष्टय</span><br>The Four Inner Instruments</div>
+    <div class="s-hindi">मनस · बुद्धि · चित्त · अहंकार — मन की संरचना को समझना</div>
+    <div class="s-div"></div>
+    <div class="s-sub">Understanding the Architecture of the Human Mind — The Foundation of All Healing</div>
+    <div class="s-meta">Decode Life Transformation · Level 1 · With ManuDada · Inner Zen Wellness Program</div>
+  </div>
+</div>
+
+<!-- S2: Opening Story -->
+<div class="sl sl-story" data-n="2">
+  <div class="sl-inner">
+    <div class="s-emoji-big">🎵</div>
+    <div class="s-h2">The Story of the <span>Four Musicians</span></div>
+    <div class="s-h2-hi">चार संगीतकारों की कहानी</div>
+    <div class="s-body" style="text-align:center;">
+      <p>In a small village, a king invited four musicians to perform together. The <strong>Tabla player</strong> listened to every sound in the hall. The <strong>Sitar player</strong> decided which note to play. The <strong>Tanpura player</strong> held the memory of every raga ever learned. The <strong>Singer</strong> believed he was the most important.</p>
+      <p style="margin-top:12px;">When they played in harmony — magic. When each insisted on dominance — chaos.</p>
+      <p style="margin-top:12px;color:var(--gold);font-weight:600;">Your mind has the same four musicians.<br>आपके मन में भी यही चार संगीतकार हैं।</p>
+    </div>
+  </div>
+</div>
+
+<!-- S3: What is Antahkarana -->
+<div class="sl sl-content" data-n="3">
+  <div class="sl-inner">
+    <div class="s-h2">What is <span>Antahkarana</span>?</div>
+    <div class="s-h2-hi">अन्तःकरण क्या है?</div>
+    <div class="s-body" style="text-align:center;">
+      <p><strong>Antah</strong> (अन्तः) = Inner &nbsp;&nbsp;·&nbsp;&nbsp; <strong>Karana</strong> (करण) = Instrument</p>
+      <p style="margin-top:12px;">The Antahkarana is the <strong>inner instrument of consciousness</strong> — the complete system through which a human being perceives, processes, remembers, decides, and acts.</p>
+      <p style="margin-top:12px;">It has <strong>four components</strong>, each with a distinct function — just like four musicians in an orchestra.</p>
+    </div>
+    <div class="s-quote">
+      <span class="notranslate">मनो बुद्धिरहंकारश्चित्तं करणमान्तरम्।<br>संशयो निश्चयो गर्वः स्मरणं विषया इमे॥</span>
+      <div class="sq-src">Vedantic Definition · वेदांतिक परिभाषा</div>
+    </div>
+  </div>
+</div>
+
+<!-- S4: The Four Instruments Overview -->
+<div class="sl sl-content" data-n="4">
+  <div class="sl-inner">
+    <div class="s-h2">The <span>Four</span> Instruments at a Glance</div>
+    <div class="s-h2-hi">चार साधन — एक दृष्टि में</div>
+    <div class="s-cards c4">
+      <div class="s-card"><div class="sc-icon">🎵</div><h3>Manas · मनस</h3><div class="sc-hindi">संवेदी मन</div><p>The Sensory Mind — receives input from 5 senses, processes, presents to Buddhi. Fast, restless, always scanning.</p></div>
+      <div class="s-card"><div class="sc-icon">⚖️</div><h3>Buddhi · बुद्धि</h3><div class="sc-hindi">विवेकशील बुद्धि</div><p>The Intellect — discriminates right/wrong, real/unreal. Decides, judges, plans. Viveka is its highest function.</p></div>
+      <div class="s-card"><div class="sc-icon">💾</div><h3>Chitta · चित्त</h3><div class="sc-hindi">स्मृति भंडार</div><p>The Memory Storehouse — stores ALL impressions (Samskaras), habits (Vasanas), and experiences. The subconscious.</p></div>
+      <div class="s-card"><div class="sc-icon">👤</div><h3>Ahamkara · अहंकार</h3><div class="sc-hindi">'मैं'-निर्माता</div><p>The I-Maker — creates sense of identity. "I am this body, this name, this role." Both essential and the root of ego.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- S5: Manas Deep Dive -->
+<div class="sl sl-content" data-n="5">
+  <div class="sl-inner">
+    <div class="s-h2">🎵 <span>Manas</span> — The Sensory Mind</div>
+    <div class="s-h2-hi">मनस — संवेदी मन · The Tabla Player</div>
+    <div class="s-key"><div class="sk-num">1</div><div class="sk-content"><h4>Function · कार्य</h4><p>Receives data from the five senses (sight, sound, touch, taste, smell), processes it, and presents it to Buddhi for decision. Also generates desires and emotions based on sensory input.</p></div></div>
+    <div class="s-key"><div class="sk-num">2</div><div class="sk-content"><h4>When Balanced · संतुलित</h4><p>Alert, aware, responsive. Notices a child about to fall and reacts instantly. Enjoys a sunset without overanalysing. Present and alive.</p></div></div>
+    <div class="s-key"><div class="sk-num">3</div><div class="sk-content"><h4>When Imbalanced · असंतुलित</h4><p>Restless, distracted, anxious. Jumps from thought to thought. Addicted to stimulation (phone, TV, food). Cannot sit still. Racing thoughts at night. "Monkey mind."</p></div></div>
+    <div class="s-manu"><h3>ManuDada</h3><p>"A client who checks their phone 200 times a day has an overactive Manas. The sensory mind is starving for input but never satisfied. Our first job is to calm this hungry instrument."</p></div>
+  </div>
+</div>
+
+<!-- S6: Buddhi Deep Dive -->
+<div class="sl sl-content" data-n="6">
+  <div class="sl-inner">
+    <div class="s-h2">⚖️ <span>Buddhi</span> — The Discriminating Intellect</div>
+    <div class="s-h2-hi">बुद्धि — विवेकशील बुद्धि · The Sitar Player</div>
+    <div class="s-key"><div class="sk-num">1</div><div class="sk-content"><h4>Function · कार्य</h4><p>Discriminates, decides, judges. Its highest function is Viveka — the ability to distinguish between the real and the unreal, the permanent and the temporary, what serves growth and what perpetuates suffering.</p></div></div>
+    <div class="s-key"><div class="sk-num">2</div><div class="sk-content"><h4>When Balanced · संतुलित</h4><p>Clear decisions. Sees through illusions. Says "no" to temptation. Plans wisely. Responds rather than reacts. The wise elder within.</p></div></div>
+    <div class="s-key"><div class="sk-num">3</div><div class="sk-content"><h4>When Imbalanced · असंतुलित</h4><p>Over-analytical (paralysis by analysis), indecisive, rigid, judgmental, or — when weakened — easily manipulated and unable to distinguish truth from falsehood.</p></div></div>
+    <div class="s-manu"><h3>ManuDada</h3><p>"A person who 'knows' smoking is bad but cannot stop — their Buddhi is present but weak. It sees the truth but cannot override the Manas cravings and Chitta habits. Our job: strengthen Buddhi."</p></div>
+  </div>
+</div>
+
+<!-- S7: Chitta Deep Dive -->
+<div class="sl sl-content" data-n="7">
+  <div class="sl-inner">
+    <div class="s-h2">💾 <span>Chitta</span> — The Memory Storehouse</div>
+    <div class="s-h2-hi">चित्त — स्मृति भंडार · The Tanpura Player</div>
+    <div class="s-key"><div class="sk-num">1</div><div class="sk-content"><h4>Function · कार्य</h4><p>Stores ALL experiences, impressions (Samskaras), habits (Vasanas), beliefs, and patterns — from birth to now. Operates below conscious awareness. This IS the subconscious mind that hypnotherapy accesses.</p></div></div>
+    <div class="s-key"><div class="sk-num">2</div><div class="sk-content"><h4>Samskaras · संस्कार</h4><p>Deep impressions from individual experiences. A child humiliated in class → Samskara: "Speaking up is dangerous." This single impression can shape decades of behaviour.</p></div></div>
+    <div class="s-key"><div class="sk-num">3</div><div class="sk-content"><h4>Vasanas · वासनाएँ</h4><p>General tendencies arising from accumulated Samskaras. Fifty rejections → Vasana of avoidance. Pattern becomes personality. "I am just not a social person."</p></div></div>
+    <div class="s-scibox"><h3>🔬 Science Corner</h3><p>Chitta corresponds to the subconscious/unconscious mind, mediated primarily by the hippocampus (memory formation) and amygdala (emotional coding). It processes 90-95% of all mental activity. Hypnotherapy works by accessing this vast storehouse.</p></div>
+  </div>
+</div>
+
+<!-- S8: Ahamkara Deep Dive -->
+<div class="sl sl-content" data-n="8">
+  <div class="sl-inner">
+    <div class="s-h2">👤 <span>Ahamkara</span> — The I-Maker</div>
+    <div class="s-h2-hi">अहंकार — 'मैं'-निर्माता · The Singer</div>
+    <div class="s-key"><div class="sk-num">1</div><div class="sk-content"><h4>Function · कार्य</h4><p>Creates and maintains the sense of individual identity — "I am this body, this name, this profession, this nationality." Essential for functioning in the world.</p></div></div>
+    <div class="s-key"><div class="sk-num">2</div><div class="sk-content"><h4>When Balanced · संतुलित</h4><p>Healthy self-esteem. Clear sense of identity. Can say "I am" without arrogance or shame. Functions as a reference point without dominating.</p></div></div>
+    <div class="s-key"><div class="sk-num">3</div><div class="sk-content"><h4>When Imbalanced · असंतुलित</h4><p>Inflated: narcissism, arrogance, "I am always right." Deflated: no self-worth, "I am nothing." Both are Ahamkara imbalances — one overbuilt, one collapsed.</p></div></div>
+    <div class="s-manu"><h3>ManuDada</h3><p>"The Singer who believes he IS the orchestra — that is inflated Ahamkara. The Singer who believes he has no voice — that is deflated Ahamkara. The wise Singer knows he is one part of the whole."</p></div>
+  </div>
+</div>
+
+<!-- S9: How They Work Together -->
+<div class="sl sl-content" data-n="9">
+  <div class="sl-inner">
+    <div class="s-h2">How the <span>Four Instruments</span> Work Together</div>
+    <div class="s-h2-hi">चारों साधन कैसे मिलकर काम करते हैं</div>
+    <div class="s-body" style="text-align:center;">
+      <p style="font-size:1.1rem;color:var(--gold);font-weight:600;">Example: You smell freshly baked samosas</p>
+    </div>
+    <div class="s-key"><div class="sk-num">1</div><div class="sk-content"><h4>Manas receives · मनस ग्रहण करता है</h4><p>"I smell something delicious!" — sensory input processed, desire generated.</p></div></div>
+    <div class="s-key"><div class="sk-num">2</div><div class="sk-content"><h4>Chitta retrieves · चित्त याद करता है</h4><p>"Mother's samosas on rainy days..." — memory + emotion activated from storehouse.</p></div></div>
+    <div class="s-key"><div class="sk-num">3</div><div class="sk-content"><h4>Buddhi evaluates · बुद्धि मूल्यांकन करती है</h4><p>"I am on a diet. But one won't hurt. Actually, three won't hurt..." — discrimination (or rationalization!).</p></div></div>
+    <div class="s-key"><div class="sk-num">4</div><div class="sk-content"><h4>Ahamkara claims · अहंकार दावा करता है</h4><p>"I deserve this! I worked hard today." — identity justifies the decision.</p></div></div>
+  </div>
+</div>
+
+<!-- S10: Antahkarana Assessment -->
+<div class="sl sl-practice" data-n="10">
+  <div class="sl-inner">
+    <div class="s-h2">Reading the <span>Antahkarana</span> in Clients</div>
+    <div class="s-h2-hi">क्लाइंट्स में अन्तःकरण पढ़ना — हीलर कौशल</div>
+    <div class="s-cards c2">
+      <div class="s-card"><div class="sc-icon">🎵</div><h3>Signs of Dominant Manas</h3><p>Restless, fidgeting, checks phone constantly, distracted, anxious, racing thoughts, sensory seeking, difficulty focusing.</p></div>
+      <div class="s-card"><div class="sc-icon">⚖️</div><h3>Signs of Dominant Buddhi</h3><p>Over-analytical, questions everything, "paralysis by analysis," skeptical, controlling, needs to understand before feeling.</p></div>
+      <div class="s-card"><div class="sc-icon">💾</div><h3>Signs of Dominant Chitta</h3><p>Stuck in the past, repeating patterns, "I've always been this way," vivid nightmares, emotional triggers from nowhere.</p></div>
+      <div class="s-card"><div class="sc-icon">👤</div><h3>Signs of Dominant Ahamkara</h3><p>Inflated: "I am special," dismisses others. Deflated: "I am worthless," cannot assert. Identity crisis: "I don't know who I am."</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- S11: Antahkarana & Therapy -->
+<div class="sl sl-content" data-n="11">
+  <div class="sl-inner">
+    <div class="s-h2">Why This Matters for <span>Healing</span></div>
+    <div class="s-h2-hi">उपचार के लिए यह क्यों महत्वपूर्ण है</div>
+    <div class="s-body" style="text-align:center;">
+      <p>Every client who walks through your door has an <strong>Antahkarana pattern</strong> — a unique configuration of which instrument is dominant, which is weak, and which is in conflict.</p>
+      <p style="margin-top:12px;">Your first task as a DLT healer is to <strong>read this pattern</strong> — before choosing any technique.</p>
+    </div>
+    <div class="s-key"><div class="sk-num">→</div><div class="sk-content"><h4>Manas-dominant client</h4><p>Needs grounding, sensory calming, Pranayama, body-based techniques. Start with relaxation, not analysis.</p></div></div>
+    <div class="s-key"><div class="sk-num">→</div><div class="sk-content"><h4>Buddhi-dominant client</h4><p>Needs to bypass intellect — metaphors, stories, indirect suggestions. Elman induction works better than Progressive.</p></div></div>
+    <div class="s-key"><div class="sk-num">→</div><div class="sk-content"><h4>Chitta-dominant client</h4><p>Needs Chitta access — hypnotherapy, regression, Inner Child work. The storehouse needs reorganising.</p></div></div>
+    <div class="s-key"><div class="sk-num">→</div><div class="sk-content"><h4>Ahamkara-dominant client</h4><p>Needs identity work — reframing self-concept, shadow work, ego softening (or strengthening if deflated).</p></div></div>
+  </div>
+</div>
+
+<!-- S12: Science Corner -->
+<div class="sl sl-science" data-n="12">
+  <div class="sl-inner">
+    <div class="s-h2">🔬 <span>Science</span> Validates the Ancients</div>
+    <div class="s-h2-hi">विज्ञान प्राचीन ज्ञान की पुष्टि करता है</div>
+    <div class="s-cards c2">
+      <div class="s-card" style="border-color:rgba(45,139,117,0.3);"><h3 style="color:var(--teal);">Manas ≈ Thalamus / Sensory Cortices</h3><p>The thalamus is the brain's sensory relay station — it receives ALL sensory input and routes it for processing. This IS Manas.</p></div>
+      <div class="s-card" style="border-color:rgba(45,139,117,0.3);"><h3 style="color:var(--teal);">Buddhi ≈ Prefrontal Cortex</h3><p>Executive function, decision-making, impulse control, planning. The "CEO of the brain" — exactly Buddhi's role.</p></div>
+      <div class="s-card" style="border-color:rgba(45,139,117,0.3);"><h3 style="color:var(--teal);">Chitta ≈ Hippocampus + Amygdala</h3><p>Memory formation + emotional coding. Together they store experiences as emotionally-charged impressions — Samskaras.</p></div>
+      <div class="s-card" style="border-color:rgba(45,139,117,0.3);"><h3 style="color:var(--teal);">Ahamkara ≈ Default Mode Network</h3><p>The DMN activates during self-referential thinking: "Who am I?" "What do others think of me?" This IS Ahamkara in action.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- S13: Today's Practice -->
+<div class="sl sl-practice" data-n="13">
+  <div class="sl-inner">
+    <div class="s-h2">🧘 Today's <span>Practice</span></div>
+    <div class="s-h2-hi">आज का अभ्यास — अपने अन्तःकरण को देखें</div>
+    <div class="s-key"><div class="sk-num">1</div><div class="sk-content"><h4>Self-Observation · आत्म-अवलोकन</h4><p>For the next 24 hours, notice which instrument dominates your mind at different times. Morning anxiety = Manas? Overthinking a decision = Buddhi? Replaying a memory = Chitta? Defending yourself = Ahamkara?</p></div></div>
+    <div class="s-key"><div class="sk-num">2</div><div class="sk-content"><h4>Partner Assessment · साथी मूल्यांकन</h4><p>With your study partner, identify each other's dominant instrument. Share your observations respectfully. Note: this is an observation exercise, not a diagnosis.</p></div></div>
+    <div class="s-key"><div class="sk-num">3</div><div class="sk-content"><h4>Family Application · पारिवारिक अनुप्रयोग</h4><p>Choose one family member. Observe (without telling them!) which Antahkarana instrument dominates their communication style. Record in your workbook.</p></div></div>
+  </div>
+</div>
+
+<!-- S14: Closing -->
+<div class="sl sl-close" data-n="14">
+  <div class="sl-inner">
+    <div class="s-emoji-big">🙏</div>
+    <div class="s-h1">You Have Met <span>Yourself</span></div>
+    <div class="s-hindi">आज आपने स्वयं से मुलाकात की</div>
+    <div class="s-div"></div>
+    <div class="s-quote" style="border:none;">
+      "Before you can heal another person's mind, you must understand how the mind is built. Today, you saw the blueprint. Tomorrow, you will learn to enter it."
+      <br><br>
+      "इससे पहले कि आप किसी अन्य व्यक्ति के मन को ठीक कर सकें, आपको समझना होगा कि मन कैसे बना है। आज आपने ब्लूप्रिंट देखा। कल, आप उसमें प्रवेश करना सीखेंगे।"
+      <div class="sq-src">— ManuDada 🙏</div>
+    </div>
+    <div class="s-meta">Tomorrow: Day 2 · Hypnotherapy Foundation · चेतन vs अवचेतन मन<br>कल: सम्मोहन चिकित्सा — नींव · The Key to Chitta</div>
+  </div>
+</div>
+</div><!-- end deck-sat -->
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- SUNDAY DECK — HYPNOTHERAPY FOUNDATION     -->
+<!-- 14 Slides · Day 2 · रविवार                 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="deck" id="deck-sun">
+
+<!-- S1: Title -->
+<div class="sl sl-title on" data-n="1">
+  <div class="sl-inner">
+    <div class="s-phase">Phase 1: Decode · चरण 1: डिकोड</div>
+    <div class="s-week">Week 1 · Day 2 · Sunday · रविवार सिद्धांत</div>
+    <div class="s-h1"><span>सम्मोहन चिकित्सा</span><br>Hypnotherapy Foundation</div>
+    <div class="s-hindi">चेतन vs अवचेतन मन — चित्त का द्वार खोलना</div>
+    <div class="s-div"></div>
+    <div class="s-sub">The Key to Chitta — Understanding Conscious, Subconscious, Trance States, and the Art of Suggestion</div>
+    <div class="s-meta">Decode Life Transformation · Level 1 · With ManuDada · Inner Zen Wellness Program</div>
+  </div>
+</div>
+
+<!-- S2: Yesterday's Bridge -->
+<div class="sl sl-story" data-n="2">
+  <div class="sl-inner">
+    <div class="s-emoji-big">🔗</div>
+    <div class="s-h2">From <span>Antahkarana</span> to <span>Hypnotherapy</span></div>
+    <div class="s-h2-hi">अन्तःकरण से सम्मोहन चिकित्सा तक — सेतु</div>
+    <div class="s-body" style="text-align:center;">
+      <p>Yesterday you learned that <strong>Chitta</strong> — the memory storehouse — holds all Samskaras and Vasanas that drive human behaviour from beneath conscious awareness.</p>
+      <p style="margin-top:12px;">Today's question: <strong>How do we ACCESS Chitta?</strong></p>
+      <p style="margin-top:12px;">The answer is 5,000 years old and has been validated by modern neuroscience:</p>
+      <p style="margin-top:12px;font-size:1.3rem;color:var(--gold);font-weight:700;">Hypnotherapy — the systematic art of entering the subconscious mind.</p>
+      <p style="margin-top:10px;color:rgba(255,255,255,0.6);">सम्मोहन चिकित्सा — अवचेतन मन में प्रवेश की व्यवस्थित कला।</p>
+    </div>
+  </div>
+</div>
+
+<!-- S3: Conscious vs Subconscious -->
+<div class="sl sl-content" data-n="3">
+  <div class="sl-inner">
+    <div class="s-h2"><span>Conscious</span> vs <span>Subconscious</span> Mind</div>
+    <div class="s-h2-hi">चेतन vs अवचेतन मन</div>
+    <div class="s-cards c2">
+      <div class="s-card" style="border-top:3px solid var(--gold);">
+        <h3>Conscious Mind · चेतन मन</h3>
+        <div class="sc-hindi" style="font-size:1.3rem;color:var(--gold);font-weight:700;">5-10%</div>
+        <p>Analytical, logical, critical thinking. Short-term memory. Willpower. Voluntary actions. "I want to change." Operates through Manas + Buddhi.</p>
+      </div>
+      <div class="s-card" style="border-top:3px solid var(--teal);">
+        <h3>Subconscious Mind · अवचेतन मन</h3>
+        <div class="sc-hindi" style="font-size:1.3rem;color:var(--teal);font-weight:700;">90-95%</div>
+        <p>Habits, beliefs, emotions, automatic responses, body functions, memories, dreams, creativity, intuition. "I can't help it." Operates through Chitta.</p>
+      </div>
+    </div>
+    <div class="s-manu"><h3>ManuDada</h3><p>"When the conscious mind (5%) says 'I want to change' and the subconscious (95%) says 'But we've always done it this way' — who wins? The subconscious. Every time. This is why willpower alone fails. You must speak directly to Chitta."</p></div>
+  </div>
+</div>
+
+<!-- S4: The Critical Faculty -->
+<div class="sl sl-content" data-n="4">
+  <div class="sl-inner">
+    <div class="s-h2">The <span>Critical Faculty</span> — The Gatekeeper</div>
+    <div class="s-h2-hi">क्रिटिकल फैकल्टी — द्वारपाल</div>
+    <div class="s-body" style="text-align:center;">
+      <p>Between the conscious and subconscious mind sits a <strong>mental filter</strong> — the Critical Faculty. It evaluates every incoming suggestion against existing beliefs.</p>
+      <p style="margin-top:12px;color:var(--gold);font-size:1.1rem;">"You are confident" → Critical Faculty checks → "But I've always been shy" → REJECTED ✗</p>
+      <p style="margin-top:15px;">Hypnotherapy temporarily <strong>reduces</strong> the Critical Faculty — creating a window where therapeutic suggestions can reach Chitta directly.</p>
+    </div>
+    <div class="s-scibox"><h3>🔬 Neuroscience</h3><p>The Critical Faculty corresponds to the dorsal anterior cingulate cortex (dACC) — the brain's "conflict monitor." fMRI studies show dACC activity DECREASES during hypnotic trance, allowing suggestions to bypass the filter and reach deeper brain structures.</p></div>
+  </div>
+</div>
+
+<!-- S5: What is Hypnosis Really -->
+<div class="sl sl-content" data-n="5">
+  <div class="sl-inner">
+    <div class="s-h2">What Hypnosis <span>Really</span> Is</div>
+    <div class="s-h2-hi">सम्मोहन वास्तव में क्या है</div>
+    <div class="s-body" style="text-align:center;">
+      <p style="font-size:1.15rem;color:var(--gold);font-weight:600;">A focused state of absorbed attention with heightened suggestibility.</p>
+      <p style="margin-top:15px;">एकाग्र ध्यान की अवस्था जिसमें सुझाव ग्रहणशीलता बढ़ जाती है।</p>
+    </div>
+    <div class="s-cards c2" style="margin-top:20px;">
+      <div class="s-card" style="border-color:rgba(39,174,96,0.3);"><h3 style="color:var(--teal);">What it IS ✓</h3><p>Natural state (you enter it daily — absorbed in a movie, driving on "autopilot"). Client remains AWARE. Client is IN CONTROL. Enhances inner resources. Vedic parallel: Dharana → Dhyana.</p></div>
+      <div class="s-card" style="border-color:rgba(192,57,43,0.3);"><h3 style="color:var(--rose);">What it is NOT ✗</h3><p>NOT sleep. NOT unconsciousness. NOT mind control. NOT magic. NOT dangerous. You CANNOT be made to do anything against your will. You CANNOT get "stuck" in trance.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- S6: Trance Depth Levels -->
+<div class="sl sl-content" data-n="6">
+  <div class="sl-inner">
+    <div class="s-h2">Trance <span>Depth</span> Levels</div>
+    <div class="s-h2-hi">ट्रान्स गहराई स्तर — हल्के से गहरे तक</div>
+    <div class="s-key"><div class="sk-num">1</div><div class="sk-content"><h4>Light Trance · हल्का ट्रान्स</h4><p>Physical relaxation, eye flutter, reluctance to move, slowed breathing. Client fully aware. Good for: relaxation, stress relief, simple suggestions. Brainwave: Alpha (8-13 Hz).</p></div></div>
+    <div class="s-key"><div class="sk-num">2</div><div class="sk-content"><h4>Medium Trance · मध्यम ट्रान्स</h4><p>Deeper relaxation, arm catalepsy (arm stays where placed), partial amnesia, time distortion. Good for: habit change, pain management, emotional work. Brainwave: Alpha-Theta border.</p></div></div>
+    <div class="s-key"><div class="sk-num">3</div><div class="sk-content"><h4>Deep Trance (Somnambulism) · गहरा ट्रान्स</h4><p>Selective amnesia, vivid hallucinations, analgesia (no pain), age regression capability, profound time distortion. Good for: regression, PLR, deep trauma work. Brainwave: Theta (4-8 Hz).</p></div></div>
+    <div class="s-manu"><h3>ManuDada</h3><p>"Most therapeutic work happens in light to medium trance. You do NOT need deep somnambulism for most clients. Depth is not the goal — therapeutic change is."</p></div>
+  </div>
+</div>
+
+<!-- S7: Induction Methods -->
+<div class="sl sl-content" data-n="7">
+  <div class="sl-inner">
+    <div class="s-h2">Induction <span>Methods</span> — How We Enter Trance</div>
+    <div class="s-h2-hi">प्रेरण विधियाँ — ट्रान्स में कैसे प्रवेश करें</div>
+    <div class="s-cards c2">
+      <div class="s-card"><div class="sc-icon">🌊</div><h3>Progressive Relaxation</h3><div class="sc-hindi">प्रगतिशील शिथिलन</div><p>Feet-to-head body scan. Slow, gentle, safe. Best for beginners and anxious clients. 15-20 minutes. "Most forgiving technique."</p></div>
+      <div class="s-card"><div class="sc-icon">⚡</div><h3>Elman Rapid</h3><div class="sc-hindi">एल्मन द्रुत</div><p>Eye-lock → fractionation → arm-drop. Fast, direct, authoritative. Best for analytical clients. 8-12 minutes.</p></div>
+      <div class="s-card"><div class="sc-icon">👁️</div><h3>Eye Fixation</h3><div class="sc-hindi">नेत्र स्थिरीकरण</div><p>Stare at fixed point → eye fatigue → natural closure. Classical method. Uses physical fatigue as evidence of "entering trance."</p></div>
+      <div class="s-card"><div class="sc-icon">🌀</div><h3>Confusion Technique</h3><div class="sc-hindi">कन्फ्यूज़न तकनीक</div><p>Erickson's method. Overwhelms analytical mind with complex language patterns. For highly resistant, intellectual clients.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- S8: The Art of Suggestion -->
+<div class="sl sl-content" data-n="8">
+  <div class="sl-inner">
+    <div class="s-h2">The Art of <span>Suggestion</span></div>
+    <div class="s-h2-hi">सुझाव की कला — शब्द ही औषधि है</div>
+    <div class="s-body" style="text-align:center;">
+      <p style="color:var(--gold);font-size:1.1rem;font-weight:600;">A suggestion is a verbal prescription planted in Chitta during trance.</p>
+    </div>
+    <div class="s-key"><div class="sk-num">✓</div><div class="sk-content"><h4>POSITIVE — what TO do</h4><p>"You feel calm and confident" ✓ — NOT "You will not feel anxious" ✗ (subconscious doesn't process negatives well).</p></div></div>
+    <div class="s-key"><div class="sk-num">✓</div><div class="sk-content"><h4>PRESENT TENSE — as if NOW</h4><p>"You ARE confident" ✓ — NOT "You will be confident someday" ✗ (future tense postpones change).</p></div></div>
+    <div class="s-key"><div class="sk-num">✓</div><div class="sk-content"><h4>SPECIFIC — concrete details</h4><p>"In every meeting, your voice is steady and clear" ✓ — NOT "You feel better" ✗ (vague = weak).</p></div></div>
+    <div class="s-key"><div class="sk-num">✓</div><div class="sk-content"><h4>EMOTIONAL — connected to feelings</h4><p>"You feel a warm wave of confidence flowing through your chest" ✓ — engages Chitta through sensory-emotional language.</p></div></div>
+  </div>
+</div>
+
+<!-- S9: Session Architecture -->
+<div class="sl sl-content" data-n="9">
+  <div class="sl-inner">
+    <div class="s-h2">The <span>9 Phases</span> of a Complete Session</div>
+    <div class="s-h2-hi">पूर्ण सत्र के 9 चरण</div>
+    <div class="s-key"><div class="sk-num">1</div><div class="sk-content"><h4>Pre-Talk & Rapport</h4><p>Explain hypnosis, dispel myths, build trust.</p></div></div>
+    <div class="s-key"><div class="sk-num">2</div><div class="sk-content"><h4>Intake & History</h4><p>Understand the issue, goals, contraindications.</p></div></div>
+    <div class="s-key"><div class="sk-num">3</div><div class="sk-content"><h4>Suggestibility Testing</h4><p>Determine client's suggestibility type.</p></div></div>
+    <div class="s-key"><div class="sk-num">4</div><div class="sk-content"><h4>Induction</h4><p>Guide into trance state.</p></div></div>
+    <div class="s-key"><div class="sk-num">5</div><div class="sk-content"><h4>Deepening</h4><p>Deepen trance to therapeutic level.</p></div></div>
+    <div class="s-key"><div class="sk-num">6</div><div class="sk-content"><h4>Therapeutic Work</h4><p>Address the core issue.</p></div></div>
+    <div class="s-key"><div class="sk-num">7</div><div class="sk-content"><h4>Suggestion Delivery</h4><p>3-5 targeted suggestions.</p></div></div>
+    <div class="s-key"><div class="sk-num">8</div><div class="sk-content"><h4>Emergence</h4><p>Count 1-5, return to alert state.</p></div></div>
+    <div class="s-key"><div class="sk-num">9</div><div class="sk-content"><h4>Post-Session Debrief</h4><p>Discuss experience, ground, plan next steps.</p></div></div>
+  </div>
+</div>
+
+<!-- S10: The Vedic Connection -->
+<div class="sl sl-content" data-n="10">
+  <div class="sl-inner">
+    <div class="s-h2">Vedic <span>Roots</span> of Hypnotherapy</div>
+    <div class="s-h2-hi">सम्मोहन चिकित्सा की वैदिक जड़ें</div>
+    <div class="s-body" style="text-align:center;">
+      <p>Hypnotherapy is not a Western invention. It is a modern name for what the Vedic tradition has practised for 5,000 years through Dharana, Dhyana, and Yoga Nidra.</p>
+    </div>
+    <div class="s-cards c2" style="margin-top:15px;">
+      <div class="s-card"><h3>Pratyahara → Induction</h3><p>Withdrawal of senses from external world = beginning of trance induction.</p></div>
+      <div class="s-card"><h3>Dharana → Focused Attention</h3><p>One-pointed concentration = the focused state that enables trance.</p></div>
+      <div class="s-card"><h3>Dhyana → Trance State</h3><p>Sustained absorbed awareness = the trance state itself.</p></div>
+      <div class="s-card"><h3>Sankalpa → Suggestion</h3><p>A resolved intention planted in a receptive mind = therapeutic suggestion.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- S11: Voice Principles -->
+<div class="sl sl-practice" data-n="11">
+  <div class="sl-inner">
+    <div class="s-h2">The Therapist's <span>Voice</span></div>
+    <div class="s-h2-hi">चिकित्सक की आवाज़ — आपका सबसे शक्तिशाली उपकरण</div>
+    <div class="s-key"><div class="sk-num">🔊</div><div class="sk-content"><h4>Pace: 60-70 words/min · गति</h4><p>Half the speed of normal conversation. Slower than you think necessary. The subconscious needs time to process each phrase.</p></div></div>
+    <div class="s-key"><div class="sk-num">🔉</div><div class="sk-content"><h4>Pitch: Lower than normal · स्वर</h4><p>A lower pitch carries authority and promotes relaxation. Raise pitch slightly during emergence to signal "returning to alert."</p></div></div>
+    <div class="s-key"><div class="sk-num">🤫</div><div class="sk-content"><h4>Volume: Softer · आवाज़</h4><p>Soft enough to create intimacy, loud enough to be heard clearly. Never whisper (straining to hear breaks trance).</p></div></div>
+    <div class="s-key"><div class="sk-num">⏸️</div><div class="sk-content"><h4>Pauses: Your greatest tool · विराम</h4><p>5-second pauses after each suggestion. Silence feels uncomfortable for beginners — but silence is where the subconscious does its work.</p></div></div>
+  </div>
+</div>
+
+<!-- S12: Self-Hypnosis Intro -->
+<div class="sl sl-content" data-n="12">
+  <div class="sl-inner">
+    <div class="s-h2">Your First <span>Self-Hypnosis</span> Practice</div>
+    <div class="s-h2-hi">आपका पहला आत्म-सम्मोहन अभ्यास</div>
+    <div class="s-key"><div class="sk-num">1</div><div class="sk-content"><h4>Sit comfortably · आराम से बैठें</h4><p>Eyes closed. Feet flat. Hands on thighs. Take 3 deep breaths.</p></div></div>
+    <div class="s-key"><div class="sk-num">2</div><div class="sk-content"><h4>Progressive Relaxation (self-guided) · स्वयं प्रगतिशील शिथिलन</h4><p>Starting from feet, silently tell each muscle group to relax. Move upward to scalp. Take 5 minutes.</p></div></div>
+    <div class="s-key"><div class="sk-num">3</div><div class="sk-content"><h4>Countdown · उल्टी गिनती</h4><p>Count from 10 to 1. "With each number, I go deeper." Feel yourself sinking gently.</p></div></div>
+    <div class="s-key"><div class="sk-num">4</div><div class="sk-content"><h4>One Suggestion · एक सुझाव</h4><p>"I am becoming a calm, confident, compassionate healer." Repeat 3 times. Feel it as true.</p></div></div>
+    <div class="s-key"><div class="sk-num">5</div><div class="sk-content"><h4>Emerge · उद्भव</h4><p>Count 1 to 5. "Fully alert, refreshed, wonderful." Open eyes.</p></div></div>
+  </div>
+</div>
+
+<!-- S13: Science Corner -->
+<div class="sl sl-science" data-n="13">
+  <div class="sl-inner">
+    <div class="s-h2">🔬 <span>Neuroscience</span> of Hypnosis</div>
+    <div class="s-h2-hi">सम्मोहन का तंत्रिका विज्ञान</div>
+    <div class="s-scibox"><h3>Stanford University Research (2016)</h3><p>fMRI scans during hypnosis revealed three key brain changes: (1) Decreased activity in the dorsal anterior cingulate — reduced self-monitoring, (2) Increased connectivity between prefrontal cortex and insula — stronger brain-body link allowing suggestions to produce physical changes, (3) Reduced default mode network activity — softened sense of self. These are measurable, reproducible neurological changes.</p></div>
+    <div class="s-scibox" style="margin-top:12px;"><h3>Brainwave States</h3><p>Normal waking = Beta (13-30 Hz). Light trance = Alpha (8-13 Hz). Deep trance = Theta (4-8 Hz). Deep sleep = Delta (0.5-4 Hz). Hypnosis operates primarily in the Alpha-Theta range — between waking and sleeping — the gateway to Chitta.</p></div>
+  </div>
+</div>
+
+<!-- S14: Closing -->
+<div class="sl sl-close" data-n="14">
+  <div class="sl-inner">
+    <div class="s-emoji-big">🙏</div>
+    <div class="s-h1">You Hold the <span>Key to Chitta</span></div>
+    <div class="s-hindi">अब चित्त की चाबी आपके हाथ में है</div>
+    <div class="s-div"></div>
+    <div class="s-quote" style="border:none;">
+      "Today you learned that the subconscious mind holds 95% of human experience — and that hypnotherapy is the key to unlock it. This week, you will learn to USE that key. Monday, you begin partner practice."
+      <br><br>
+      "आज आपने सीखा कि अवचेतन मन 95% मानव अनुभव रखता है — और सम्मोहन चिकित्सा उसे खोलने की चाबी है। इस सप्ताह, आप उस चाबी का उपयोग सीखेंगे।"
+      <div class="sq-src">— ManuDada 🙏</div>
+    </div>
+    <div class="s-body" style="text-align:center;margin-top:15px;">
+      <p style="color:var(--gold);font-weight:600;">Tonight's homework: 10-minute self-hypnosis practice before bed.</p>
+      <p style="color:rgba(255,255,255,0.5);margin-top:8px;">आज रात का गृहकार्य: सोने से पहले 10 मिनट आत्म-सम्मोहन अभ्यास।</p>
+    </div>
+    <div class="s-meta" style="margin-top:25px;">Week 1 · Days 3-7: Partner Practice · Mind Mapping · Manas Work · Buddhi & Suggestion Writing · Self-Hypnosis</div>
+  </div>
+</div>
+</div><!-- end deck-sun -->
+
+
+<script>
+let currentDeck='sat',currentSlide={sat:1,sun:1},totalSlides={sat:14,sun:14};
+
+function switchDeck(d){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.deck').forEach(dk=>dk.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('deck-'+d).classList.add('active');
+  currentDeck=d;
+  showSlide(currentSlide[d]);
+}
+
+function showSlide(n){
+  const deck=document.getElementById('deck-'+currentDeck);
+  const slides=deck.querySelectorAll('.sl');
+  const total=totalSlides[currentDeck];
+  if(n<1)n=1;if(n>total)n=total;
+  currentSlide[currentDeck]=n;
+  slides.forEach(s=>s.classList.remove('on'));
+  slides[n-1].classList.add('on');
+  document.getElementById('slideCounter').textContent=`${n} / ${total}`;
+  document.getElementById('progressFill').style.width=((n/total)*100)+'%';
+}
+
+function nextSlide(){showSlide(currentSlide[currentDeck]+1);}
+function prevSlide(){showSlide(currentSlide[currentDeck]-1);}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key===' ')nextSlide();
+  if(e.key==='ArrowLeft')prevSlide();
+});
+
+let touchStartX=0;
+document.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX;});
+document.addEventListener('touchend',e=>{const diff=e.changedTouches[0].screenX-touchStartX;if(Math.abs(diff)>50){diff<0?nextSlide():prevSlide();}});
+
+showSlide(1);
+</script>
+</body>
+</html>

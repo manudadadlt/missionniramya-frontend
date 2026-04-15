@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DLT Week 1 · Student Workbook · अन्तःकरण चतुष्टय + सम्मोहन चिकित्सा — Print Version</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#111;--dark:#333;--mid:#666;--light:#999;--line:#ccc;--bg:#fff;--rule:#aaa;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{font-size:16px;}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--bg);color:var(--black);line-height:1.7;max-width:780px;margin:0 auto;padding:40px 35px;}
+@media print{body{padding:15px 20px;font-size:14px;max-width:100%;}.no-print{display:none;}.page-break{page-break-before:always;}.keep-together{page-break-inside:avoid;}.writing-area{border:1px solid #aaa;}h1,h2,h3{page-break-after:avoid;}}
+.no-print-bar{text-align:center;padding:15px;background:#f5f5f5;margin-bottom:20px;border-radius:6px;}
+.no-print-bar button{padding:12px 40px;font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:#111;color:#fff;border:none;border-radius:6px;cursor:pointer;}
+.no-print-bar p{font-family:'Montserrat',sans-serif;font-size:0.5rem;color:#999;margin-top:8px;letter-spacing:1px;}
+
+.wb-cover{text-align:center;padding:60px 20px 50px;border-bottom:3px solid var(--black);}
+.wb-cover .wb-logo{font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:6px;text-transform:uppercase;color:var(--mid);margin-bottom:15px;}
+.wb-cover h1{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--black);line-height:1.2;margin-bottom:8px;}
+.wb-cover .wb-hindi{font-size:1.3rem;color:var(--dark);margin-bottom:20px;}
+.wb-cover .wb-line{width:60px;height:2px;background:var(--black);margin:20px auto;}
+.wb-cover .wb-meta{font-family:'Montserrat',sans-serif;font-size:0.55rem;letter-spacing:2px;color:var(--mid);text-transform:uppercase;line-height:2;}
+.wb-cover .wb-phase{font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:4px;color:var(--black);text-transform:uppercase;margin-top:15px;font-weight:700;}
+
+.student-info{border:2px solid var(--black);padding:20px 25px;margin:30px 0;border-radius:4px;}
+.student-info h3{font-family:'Montserrat',sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--black);margin-bottom:15px;}
+.info-line{display:flex;align-items:flex-end;margin:12px 0;gap:10px;}
+.info-label{font-family:'Montserrat',sans-serif;font-size:0.6rem;font-weight:600;color:var(--dark);min-width:120px;letter-spacing:1px;}
+.info-blank{flex:1;border-bottom:1px solid var(--black);min-height:22px;}
+
+.toc{padding:25px 0;margin:20px 0;border-bottom:1px solid var(--line);}
+.toc h2{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--black);margin-bottom:15px;text-align:center;}
+.toc-item{display:flex;justify-content:space-between;align-items:flex-end;padding:6px 0;border-bottom:1px dotted var(--line);font-size:0.9rem;}
+
+.day-header{padding:30px 0 20px;border-top:3px solid var(--black);margin-top:35px;}
+.day-header .dh-num{font-family:'Montserrat',sans-serif;font-size:0.6rem;letter-spacing:5px;text-transform:uppercase;color:var(--mid);}
+.day-header h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--black);line-height:1.3;margin-top:4px;}
+.day-header .dh-hindi{font-size:1rem;color:var(--dark);margin-top:2px;}
+.day-header .dh-type{font-family:'Montserrat',sans-serif;font-size:0.5rem;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-top:8px;padding:4px 12px;border:1px solid var(--line);display:inline-block;border-radius:3px;}
+
+.wb-section{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--black);margin:25px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line);}
+.wb-section-num{font-family:'Montserrat',sans-serif;font-size:0.5rem;letter-spacing:3px;color:var(--mid);text-transform:uppercase;}
+.wb-instruction{font-size:0.88rem;color:var(--dark);line-height:1.7;margin:10px 0 15px;font-style:italic;}
+
+.writing-area{border:1.5px solid var(--line);border-radius:4px;padding:12px 15px;margin:12px 0;min-height:100px;position:relative;}
+.writing-area.small{min-height:60px;}
+.writing-area.medium{min-height:120px;}
+.writing-area.large{min-height:180px;}
+.writing-area.xl{min-height:250px;}
+.writing-area .wa-label{font-family:'Montserrat',sans-serif;font-size:0.5rem;letter-spacing:2px;text-transform:uppercase;color:var(--light);position:absolute;top:6px;right:10px;}
+.writing-lines .wl{border-bottom:1px solid #e5e5e5;height:28px;width:100%;}
+
+.rating-row{display:flex;align-items:center;gap:10px;margin:8px 0;padding:8px 0;border-bottom:1px solid #eee;}
+.rating-label{flex:1;font-size:0.88rem;color:var(--dark);}
+.rating-boxes{display:flex;gap:4px;}
+.rating-box{width:28px;height:28px;border:1.5px solid var(--line);border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:0.5rem;color:var(--light);}
+
+.wb-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:0.85rem;}
+.wb-table th{font-family:'Montserrat',sans-serif;font-size:0.55rem;letter-spacing:1px;text-transform:uppercase;background:#f5f5f5;border:1px solid var(--line);padding:8px 10px;text-align:left;color:var(--dark);}
+.wb-table td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;}
+.wb-table td.write{min-height:30px;background:#fafafa;}
+
+.check-item{display:flex;align-items:flex-start;gap:10px;margin:8px 0;padding:6px 0;}
+.check-box{width:18px;height:18px;border:1.5px solid var(--dark);border-radius:2px;flex-shrink:0;margin-top:3px;}
+.check-text{font-size:0.88rem;color:var(--dark);line-height:1.6;}
+
+.concept-bw{border:2px solid var(--black);border-radius:4px;padding:18px 20px;margin:18px 0;}
+.concept-bw h4{font-family:'Montserrat',sans-serif;font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:6px;}
+.concept-bw .cb-term{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--black);}
+.concept-bw .cb-meaning{font-size:0.85rem;color:var(--dark);margin-top:4px;}
+
+.score-box{border:2px solid var(--black);padding:15px 20px;margin:15px 0;text-align:center;border-radius:4px;}
+.score-box h4{font-family:'Montserrat',sans-serif;font-size:0.55rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.score-fields{display:flex;justify-content:center;gap:25px;margin-top:8px;}
+.score-field{text-align:center;}
+.score-field .sf-label{font-family:'Montserrat',sans-serif;font-size:0.45rem;color:var(--mid);letter-spacing:1px;}
+.score-field .sf-box{width:50px;height:35px;border:1.5px solid var(--dark);border-radius:3px;margin:4px auto 0;}
+
+.notes-page{padding:20px 0;}
+.notes-page h2{font-family:'Cormorant Garamond',serif;font-size:1.4rem;text-align:center;margin-bottom:20px;}
+.notes-lines .nl{border-bottom:1px solid #e0e0e0;height:30px;}
+
+.wb-footer{text-align:center;padding:30px 0;margin-top:40px;border-top:2px solid var(--black);}
+.wb-footer .wf-brand{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;}
+.wb-footer .wf-tag{font-family:'Montserrat',sans-serif;font-size:0.4rem;letter-spacing:4px;color:var(--mid);text-transform:uppercase;margin-top:4px;}
+.wb-footer .wf-copy{font-size:0.6rem;color:var(--mid);margin-top:10px;}
+
+@media(max-width:600px){body{padding:20px 15px;}.info-line{flex-direction:column;gap:4px;}.rating-row{flex-direction:column;gap:4px;}}
+</style>
+</head>
+<body>
+
+<div class="no-print-bar no-print">
+  <button onclick="window.print()">🖨 Print This Workbook</button>
+  <p>Optimised for A4 / Letter · Black & White · Save as PDF from print dialog</p>
+</div>
+
+<!-- ═══ COVER ═══ -->
+<div class="wb-cover">
+  <div class="wb-logo">Inner Zen Wellness Program · Decode Life Transformation</div>
+  <div class="wb-phase">Phase 1: Decode · चरण 1: डिकोड</div>
+  <h1>Student Workbook<br>Week 1</h1>
+  <div class="wb-hindi">विद्यार्थी कार्यपुस्तिका · सप्ताह 1</div>
+  <div class="wb-line"></div>
+  <h1 style="font-size:1.6rem;margin-top:10px;">Antahkarana Chatushtaya + Hypnotherapy Foundations</h1>
+  <div class="wb-hindi" style="font-size:1rem;">अन्तःकरण चतुष्टय + सम्मोहन चिकित्सा — नींव</div>
+  <div class="wb-line"></div>
+  <div class="wb-meta">Days 1–7 · Modality 1: Hypnotherapy<br>Vedic Framework: Manas · Buddhi · Chitta · Ahankara · Dhyana · Dharana<br>Medhavi Skills University, Sikkim (UGC Recognised)</div>
+</div>
+
+<!-- ═══ STUDENT INFO ═══ -->
+<div class="student-info">
+  <h3>Student Details · विद्यार्थी विवरण</h3>
+  <div class="info-line"><span class="info-label">Name / नाम:</span><span class="info-blank"></span></div>
+  <div class="info-line"><span class="info-label">Batch / बैच:</span><span class="info-blank"></span></div>
+  <div class="info-line"><span class="info-label">Date Started / आरम्भ तिथि:</span><span class="info-blank"></span></div>
+  <div class="info-line"><span class="info-label">Study Partner / अभ्यास साथी:</span><span class="info-blank"></span></div>
+  <div class="info-line"><span class="info-label">Week 1 Intention / सप्ताह 1 का इरादा:</span><span class="info-blank"></span></div>
+</div>
+
+<!-- ═══ TOC ═══ -->
+<div class="toc">
+  <h2>Contents · विषय सूची</h2>
+  <div class="toc-item"><span>Section 1: Day 1 — Four Inner Instruments · अन्तःकरण चतुष्टय</span></div>
+  <div class="toc-item"><span>Section 2: Day 2 — Hypnotherapy Foundations · सम्मोहन चिकित्सा नींव</span></div>
+  <div class="toc-item"><span>Section 3: Day 3 — Mind Mapping Partners · अन्तःकरण अवलोकन</span></div>
+  <div class="toc-item"><span>Section 4: Day 4 — Manas Work & Deepening · संवेदी जागरूकता</span></div>
+  <div class="toc-item"><span>Section 5: Day 5 — Buddhi & Suggestion Writing · विवेक, सुझाव</span></div>
+  <div class="toc-item"><span>Section 6: Day 6 — Chitta, Ahankara & Self-Hypnosis</span></div>
+  <div class="toc-item"><span>Section 7: Day 7 — Weekly Review & Self-Assessment</span></div>
+  <div class="toc-item"><span>Section 8: Weekly Mind Diary · साप्ताहिक मन डायरी</span></div>
+  <div class="toc-item"><span>Section 9: Notes Pages · नोट्स पृष्ठ</span></div>
+</div>
+
+
+<!-- ═══ DAY 1 ═══ -->
+
+<!-- ══ LEGAL DISCLAIMER BANNER ══ -->
+<div style="max-width:860px;margin:0 auto;padding:20px 30px;">
+<div style="background:#fff5f5;border:2px solid #D4556B;border-radius:12px;padding:22px 28px;margin:0 0 10px;">
+<div style="font-family:'Montserrat',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#D4556B;margin-bottom:10px;">📋 Educational Disclaimer · शैक्षिक अस्वीकरण</div>
+<p style="font-family:'EB Garamond',serif;font-size:0.88rem;line-height:1.75;color:#7f1d1d;margin-bottom:10px;">This material is provided by Inner Zen Wellness Program (IZWP) for <strong>educational and knowledge purposes only</strong>. It is NOT intended as authorisation, licence, or encouragement to practise any healing modality on any person. The knowledge shared herein enables students to understand, explain, and guide individuals seeking information about holistic healing modalities. If any student chooses to independently practise any technique described in this material, they do so entirely at their own risk and responsibility. IZWP, its founder, trainers, instructors, and affiliated institutions (including Medhavi Skills University) shall NOT be held liable for any consequences arising from such practice.</p>
+<p style="font-family:'EB Garamond',serif;font-size:0.88rem;line-height:1.75;color:#7f1d1d;">यह सामग्री इनर ज़ेन वेलनेस प्रोग्राम (IZWP) द्वारा <strong>केवल शैक्षिक और ज्ञान उद्देश्यों</strong> के लिए प्रदान की गई है। यह किसी भी व्यक्ति पर किसी उपचार पद्धति का अभ्यास करने के लिए प्राधिकरण, लाइसेंस, या प्रोत्साहन नहीं है। यदि कोई विद्यार्थी इस सामग्री में वर्णित किसी तकनीक का स्वतंत्र रूप से अभ्यास करता है, तो वह पूरी तरह अपने जोखिम और जिम्मेदारी पर ऐसा करता है। IZWP, इसके संस्थापक, प्रशिक्षक, और संबद्ध संस्थान (मेधावी स्किल्स यूनिवर्सिटी सहित) ऐसे अभ्यास से उत्पन्न किसी भी परिणाम के लिए उत्तरदायी नहीं होंगे।</p>
+</div>
+</div>
+<!-- ══ END DISCLAIMER BANNER ══ -->
+
+<div class="day-header page-break">
+  <div class="dh-num">Day 1 · दिन 1</div>
+  <h2>Four Inner Instruments — Antahkarana Chatushtaya</h2>
+  <div class="dh-hindi">चार आंतरिक साधन — अन्तःकरण चतुष्टय</div>
+  <div class="dh-type">Saturday · शनिवार · Theory · सिद्धांत</div>
+</div>
+
+<div class="wb-section-num">Exercise 1.1</div>
+<div class="wb-section">The Four Instruments — Define in Your Own Words · चार साधनों को अपने शब्दों में परिभाषित करें</div>
+<div class="wb-instruction">After studying the course book and live session, write your own simple definition of each instrument. Include one real-life example for each.</div>
+
+<table class="wb-table">
+  <tr><th style="width:18%;">Instrument</th><th style="width:20%;">Your Definition / परिभाषा</th><th style="width:20%;">Function / कार्य</th><th style="width:22%;">Real-Life Example / उदाहरण</th><th style="width:20%;">When Imbalanced / असंतुलित होने पर</th></tr>
+  <tr><td><strong>Manas</strong><br>मनस् (Sensory Mind)</td><td class="write"></td><td class="write"></td><td class="write"></td><td class="write"></td></tr>
+  <tr><td><strong>Buddhi</strong><br>बुद्धि (Intellect)</td><td class="write"></td><td class="write"></td><td class="write"></td><td class="write"></td></tr>
+  <tr><td><strong>Chitta</strong><br>चित्त (Memory Store)</td><td class="write"></td><td class="write"></td><td class="write"></td><td class="write"></td></tr>
+  <tr><td><strong>Ahamkara</strong><br>अहंकार (Ego/I-Sense)</td><td class="write"></td><td class="write"></td><td class="write"></td><td class="write"></td></tr>
+</table>
+
+<div class="wb-section-num">Exercise 1.2</div>
+<div class="wb-section">Self-Observation — Which Instrument is Loudest? · आत्म-अवलोकन — कौन सा साधन सबसे प्रबल है?</div>
+<div class="wb-instruction">Sit quietly for 5 minutes. Observe your mind without judgement. Notice which of the four instruments is most active right now. Record your observations.</div>
+
+<div class="writing-area large"><div class="wa-label">Observations / अवलोकन</div><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+
+<div class="wb-section-num">Exercise 1.3</div>
+<div class="wb-section">Antahkarana Profile — Yourself · अन्तःकरण प्रोफ़ाइल — स्वयं</div>
+<div class="wb-instruction">Rate the current strength/health of each instrument in yourself (1 = very weak/imbalanced, 5 = strong/balanced).</div>
+
+<div class="rating-row"><span class="rating-label"><strong>Manas</strong> — Is my sensory mind calm or restless?</span><div class="rating-boxes"><div class="rating-box">1</div><div class="rating-box">2</div><div class="rating-box">3</div><div class="rating-box">4</div><div class="rating-box">5</div></div></div>
+<div class="rating-row"><span class="rating-label"><strong>Buddhi</strong> — Is my discrimination clear or clouded?</span><div class="rating-boxes"><div class="rating-box">1</div><div class="rating-box">2</div><div class="rating-box">3</div><div class="rating-box">4</div><div class="rating-box">5</div></div></div>
+<div class="rating-row"><span class="rating-label"><strong>Chitta</strong> — Are old memories controlling me or resolved?</span><div class="rating-boxes"><div class="rating-box">1</div><div class="rating-box">2</div><div class="rating-box">3</div><div class="rating-box">4</div><div class="rating-box">5</div></div></div>
+<div class="rating-row"><span class="rating-label"><strong>Ahamkara</strong> — Is my ego balanced or inflated/deflated?</span><div class="rating-boxes"><div class="rating-box">1</div><div class="rating-box">2</div><div class="rating-box">3</div><div class="rating-box">4</div><div class="rating-box">5</div></div></div>
+
+<div class="wb-section-num">Exercise 1.4</div>
+<div class="wb-section">Family Member Antahkarana Analysis · परिवार के सदस्य का अन्तःकरण विश्लेषण</div>
+<div class="wb-instruction">Choose one family member (do not share this with them — this is your practice). Observe them and note which instrument seems dominant, and what signs you noticed.</div>
+
+<div class="info-line"><span class="info-label">Person (initials only):</span><span class="info-blank"></span></div>
+<div class="writing-area medium"><div class="wa-label">Dominant instrument & evidence / प्रमुख साधन और संकेत</div><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+
+
+<!-- ═══ DAY 2 ═══ -->
+<div class="day-header page-break">
+  <div class="dh-num">Day 2 · दिन 2</div>
+  <h2>Hypnotherapy Foundations — Conscious vs Subconscious Mind</h2>
+  <div class="dh-hindi">सम्मोहन चिकित्सा नींव — चेतन बनाम अवचेतन मन</div>
+  <div class="dh-type">Sunday · रविवार · Theory · सिद्धांत</div>
+</div>
+
+<div class="wb-section-num">Exercise 2.1</div>
+<div class="wb-section">Conscious vs Subconscious — Key Differences · चेतन बनाम अवचेतन — मुख्य अंतर</div>
+
+<table class="wb-table keep-together">
+  <tr><th style="width:30%;">Feature / विशेषता</th><th style="width:35%;">Conscious Mind / चेतन मन</th><th style="width:35%;">Subconscious Mind / अवचेतन मन</th></tr>
+  <tr><td>Percentage of mind</td><td class="write"></td><td class="write"></td></tr>
+  <tr><td>Speed of processing</td><td class="write"></td><td class="write"></td></tr>
+  <tr><td>Type of thinking</td><td class="write"></td><td class="write"></td></tr>
+  <tr><td>What it controls</td><td class="write"></td><td class="write"></td></tr>
+  <tr><td>Vedic equivalent</td><td class="write"></td><td class="write"></td></tr>
+</table>
+
+<div class="wb-section-num">Exercise 2.2</div>
+<div class="wb-section">What is Hypnosis? — Write from Memory · सम्मोहन क्या है? — स्मृति से लिखें</div>
+<div class="wb-instruction">Write a simple, accurate definition of hypnosis that you could explain to a sceptical friend. Include what it IS and what it is NOT.</div>
+
+<div class="writing-area medium"><div class="wa-label">What hypnosis IS / सम्मोहन क्या है</div><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+<div class="writing-area medium"><div class="wa-label">What hypnosis is NOT / सम्मोहन क्या नहीं है</div><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+
+<div class="wb-section-num">Exercise 2.3</div>
+<div class="wb-section">The Critical Faculty · क्रिटिकल फैकल्टी</div>
+<div class="wb-instruction">Explain in your own words: What is the Critical Faculty? Why must it be bypassed for hypnotherapy to work? How does this relate to Chitta?</div>
+
+<div class="writing-area large"><div class="wa-label">Your explanation / आपकी व्याख्या</div><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+
+<div class="wb-section-num">Exercise 2.4</div>
+<div class="wb-section">Trance States in Daily Life · दैनिक जीवन में ट्रान्स अवस्थाएँ</div>
+<div class="wb-instruction">List 5 everyday situations where you naturally enter a light trance state (highway hypnosis, absorbed in a movie, etc.).</div>
+
+<div class="writing-area medium"><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+
+<div class="wb-section-num">Exercise 2.5</div>
+<div class="wb-section">Suggestibility Self-Test · सुझाव ग्रहणशीलता आत्म-परीक्षण</div>
+<div class="wb-instruction">Answer these questions to understand your own suggestibility type.</div>
+
+<table class="wb-table keep-together">
+  <tr><th style="width:60%;">Question / प्रश्न</th><th style="width:20%;">Yes / हाँ</th><th style="width:20%;">No / नहीं</th></tr>
+  <tr><td>Do you cry easily during emotional movies?</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Can you vividly imagine a lemon being cut right now?</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Do you tend to follow instructions without questioning?</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Do you lose track of time when reading or gaming?</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Do you prefer detailed analysis before making decisions?</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Do you need to understand WHY before accepting something?</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td></tr>
+</table>
+<div class="writing-area small"><div class="wa-label">My suggestibility type: Emotional / Physical / Intellectual? / मेरा प्रकार</div><div class="writing-lines"><div class="wl"></div></div></div>
+
+
+<!-- ═══ DAY 3 ═══ -->
+<div class="day-header page-break">
+  <div class="dh-num">Day 3 · दिन 3</div>
+  <h2>Mind Mapping Partners — Antahkarana Observation</h2>
+  <div class="dh-hindi">अन्तःकरण अवलोकन — साथी अभ्यास</div>
+  <div class="dh-type">Monday · सोमवार · Partner Practice · व्यावहारिक</div>
+</div>
+
+<div class="wb-section-num">Exercise 3.1</div>
+<div class="wb-section">Partner Antahkarana Profile · साथी का अन्तःकरण प्रोफ़ाइल</div>
+<div class="wb-instruction">Interview your study partner for 15 minutes. Ask about their daily patterns, decision-making style, recurring thoughts, and self-image. Map their Antahkarana profile.</div>
+
+<div class="info-line"><span class="info-label">Partner Name:</span><span class="info-blank"></span></div>
+
+<table class="wb-table">
+  <tr><th>Instrument</th><th>Observations / अवलोकन</th><th>Dominant? (Y/N)</th><th>Balanced? (Y/N)</th></tr>
+  <tr><td><strong>Manas</strong></td><td class="write"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td><strong>Buddhi</strong></td><td class="write"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td><strong>Chitta</strong></td><td class="write"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td><strong>Ahamkara</strong></td><td class="write"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td></tr>
+</table>
+
+<div class="writing-area medium"><div class="wa-label">Key pattern I noticed / मुख्य पैटर्न जो मैंने देखा</div><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+
+<div class="wb-section-num">Exercise 3.2</div>
+<div class="wb-section">Progressive Relaxation Induction — First Attempt · प्रगतिशील शिथिलन प्रेरण — पहला प्रयास</div>
+<div class="wb-instruction">After practising the Progressive Relaxation Induction with your partner, record your experience.</div>
+
+<table class="wb-table keep-together">
+  <tr><th style="width:50%;">As the Hypnotist / सम्मोहनकर्ता के रूप में</th><th style="width:50%;">As the Subject / विषय के रूप में</th></tr>
+  <tr><td class="write" style="min-height:80px;"></td><td class="write" style="min-height:80px;"></td></tr>
+</table>
+
+<div class="rating-row"><span class="rating-label">My confidence giving induction (1-10):</span><div class="rating-boxes"><div class="rating-box">1</div><div class="rating-box">2</div><div class="rating-box">3</div><div class="rating-box">4</div><div class="rating-box">5</div><div class="rating-box">6</div><div class="rating-box">7</div><div class="rating-box">8</div><div class="rating-box">9</div><div class="rating-box">10</div></div></div>
+
+
+<!-- ═══ DAY 4 ═══ -->
+<div class="day-header page-break">
+  <div class="dh-num">Day 4 · दिन 4</div>
+  <h2>Manas Work & Deepening — Sensory Awareness</h2>
+  <div class="dh-hindi">मनस कार्य और गहनता — संवेदी जागरूकता</div>
+  <div class="dh-type">Tuesday · मंगलवार · Deepening · गहनता</div>
+</div>
+
+<div class="wb-section-num">Exercise 4.1</div>
+<div class="wb-section">Sensory Awareness Exercise · संवेदी जागरूकता अभ्यास</div>
+<div class="wb-instruction">Sit quietly for 10 minutes. Record everything your Manas (sensory mind) picks up through each sense.</div>
+
+<table class="wb-table">
+  <tr><th>Sense / इन्द्रिय</th><th>What I noticed / मैंने क्या देखा</th><th>How many distinct inputs? / कितने अलग संकेत?</th></tr>
+  <tr><td>Sight / दृष्टि</td><td class="write"></td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Sound / श्रवण</td><td class="write"></td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Touch / स्पर्श</td><td class="write"></td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Smell / गंध</td><td class="write"></td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Taste / स्वाद</td><td class="write"></td><td class="write" style="text-align:center;"></td></tr>
+</table>
+
+<div class="writing-area medium"><div class="wa-label">What surprised me about my Manas activity / मनस के बारे में क्या आश्चर्यजनक था</div><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+
+<div class="wb-section-num">Exercise 4.2</div>
+<div class="wb-section">Manas Calming Techniques — Record & Rate · मनस शांत करने की तकनीकें</div>
+
+<table class="wb-table keep-together">
+  <tr><th>Technique Tried</th><th>Duration</th><th>Effectiveness (1-5)</th><th>Notes</th></tr>
+  <tr><td>Counting breaths</td><td class="write"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+  <tr><td>Body scan</td><td class="write"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+  <tr><td>Single-point focus (candle/object)</td><td class="write"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+  <tr><td>Walking meditation</td><td class="write"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+</table>
+
+
+<!-- ═══ DAY 5 ═══ -->
+<div class="day-header page-break">
+  <div class="dh-num">Day 5 · दिन 5</div>
+  <h2>Buddhi & Suggestion Writing — Viveka, Suggestions</h2>
+  <div class="dh-hindi">बुद्धि और सुझाव लेखन — विवेक, सुझाव</div>
+  <div class="dh-type">Wednesday · बुधवार · Skills Building · कौशल निर्माण</div>
+</div>
+
+<div class="wb-section-num">Exercise 5.1</div>
+<div class="wb-section">Viveka Practice — True or Conditioned? · विवेक अभ्यास — सत्य या संस्कारित?</div>
+<div class="wb-instruction">List 5 beliefs you hold. For each, ask: "Is this MY truth, or something I was taught/conditioned to believe?" This is Buddhi at work — discriminating between your authentic knowing and inherited programming.</div>
+
+<table class="wb-table">
+  <tr><th style="width:40%;">Belief I Hold / मेरा विश्वास</th><th style="width:20%;">My Truth? / मेरा सत्य?</th><th style="width:20%;">Conditioned? / संस्कारित?</th><th style="width:20%;">Source / स्रोत</th></tr>
+  <tr><td class="write"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+  <tr><td class="write"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+  <tr><td class="write"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+  <tr><td class="write"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+  <tr><td class="write"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+</table>
+
+<div class="wb-section-num">Exercise 5.2</div>
+<div class="wb-section">Suggestion Writing Practice · सुझाव लेखन अभ्यास</div>
+<div class="wb-instruction">Write 5 hypnotic suggestions following the rules: positive (no negatives), present tense, specific, emotionally engaging, and personalised.</div>
+
+<table class="wb-table">
+  <tr><th style="width:10%;">#</th><th style="width:30%;">Issue / समस्या</th><th style="width:60%;">Your Suggestion / आपका सुझाव</th></tr>
+  <tr><td>1</td><td class="write"></td><td class="write"></td></tr>
+  <tr><td>2</td><td class="write"></td><td class="write"></td></tr>
+  <tr><td>3</td><td class="write"></td><td class="write"></td></tr>
+  <tr><td>4</td><td class="write"></td><td class="write"></td></tr>
+  <tr><td>5</td><td class="write"></td><td class="write"></td></tr>
+</table>
+
+
+<!-- ═══ DAY 6 ═══ -->
+<div class="day-header page-break">
+  <div class="dh-num">Day 6 · दिन 6</div>
+  <h2>Chitta, Ahankara & Self-Hypnosis</h2>
+  <div class="dh-hindi">चित्त, अहंकार और आत्म-सम्मोहन</div>
+  <div class="dh-type">Thursday · गुरुवार · Client Application · क्लाइंट अनुप्रयोग</div>
+</div>
+
+<div class="wb-section-num">Exercise 6.1</div>
+<div class="wb-section">Chitta Exploration — Recurring Patterns · चित्त अन्वेषण — आवर्ती पैटर्न</div>
+<div class="wb-instruction">Identify 3 recurring patterns in your life (emotional reactions, relationship dynamics, self-sabotage, etc.). These are Samskaras stored in Chitta.</div>
+
+<table class="wb-table">
+  <tr><th style="width:8%;">#</th><th style="width:30%;">Pattern / पैटर्न</th><th style="width:30%;">When It Activates / कब सक्रिय होता है</th><th style="width:32%;">Possible Origin / संभावित मूल</th></tr>
+  <tr><td>1</td><td class="write"></td><td class="write"></td><td class="write"></td></tr>
+  <tr><td>2</td><td class="write"></td><td class="write"></td><td class="write"></td></tr>
+  <tr><td>3</td><td class="write"></td><td class="write"></td><td class="write"></td></tr>
+</table>
+
+<div class="wb-section-num">Exercise 6.2</div>
+<div class="wb-section">Ahamkara Inventory — My Identity Layers · अहंकार सूची — मेरी पहचान की परतें</div>
+<div class="wb-instruction">Complete the sentence "I am ___" at least 10 times. Then circle the ones that are CHOSEN identities vs IMPOSED identities.</div>
+
+<div class="writing-area large"><div class="wa-label">I am... / मैं हूँ...</div><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+
+<div class="wb-section-num">Exercise 6.3</div>
+<div class="wb-section">Self-Hypnosis Practice Log · आत्म-सम्मोहन अभ्यास रिकॉर्ड</div>
+<div class="wb-instruction">Record your first self-hypnosis experience.</div>
+
+<div class="info-line"><span class="info-label">Date & Time:</span><span class="info-blank"></span></div>
+<div class="info-line"><span class="info-label">Duration:</span><span class="info-blank"></span></div>
+<div class="info-line"><span class="info-label">Suggestion Used:</span><span class="info-blank"></span></div>
+<div class="writing-area medium"><div class="wa-label">Experience & depth reached / अनुभव और गहराई</div><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+
+
+<!-- ═══ DAY 7 ═══ -->
+<div class="day-header page-break">
+  <div class="dh-num">Day 7 · दिन 7</div>
+  <h2>Weekly Review & Self-Assessment</h2>
+  <div class="dh-hindi">साप्ताहिक समीक्षा और आत्म-मूल्यांकन</div>
+  <div class="dh-type">Friday · शुक्रवार · Q&A + MCQ · प्रश्नोत्तर</div>
+</div>
+
+<div class="wb-section-num">Exercise 7.1</div>
+<div class="wb-section">Week 1 Competency Self-Assessment · सप्ताह 1 योग्यता मूल्यांकन</div>
+
+<table class="wb-table">
+  <tr><th style="width:75%;">Competency / योग्यता</th><th style="width:25%;text-align:center;">C / D / N</th></tr>
+  <tr><td>Define & distinguish all four Antahkarana instruments</td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Profile a person's dominant Antahkarana pattern</td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Explain conscious vs subconscious mind</td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Define hypnosis accurately (what it IS and is NOT)</td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Explain the Critical Faculty and its role</td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Identify trance states and depth levels</td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Perform a basic Progressive Relaxation Induction</td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Write positive, present-tense suggestions</td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Practise self-hypnosis</td><td class="write" style="text-align:center;"></td></tr>
+  <tr><td>Connect Antahkarana to modern psychology concepts</td><td class="write" style="text-align:center;"></td></tr>
+</table>
+
+<div class="wb-section-num">Exercise 7.2</div>
+<div class="wb-section">MCQ Score Tracker</div>
+<table class="wb-table keep-together">
+  <tr><th>MCQ Set</th><th>Score</th><th>%</th><th>Areas to Review</th></tr>
+  <tr><td>Practice Set 1A</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+</table>
+
+<div class="wb-section-num">Exercise 7.3</div>
+<div class="wb-section">Week 1 Reflections · सप्ताह 1 चिंतन</div>
+
+<p style="font-weight:600;margin-top:15px;">1. What was your biggest "aha moment" this week?</p>
+<div class="writing-area medium"><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+
+<p style="font-weight:600;">2. How has your understanding of "the mind" changed?</p>
+<div class="writing-area medium"><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+
+<p style="font-weight:600;">3. What do you want to improve in Week 2?</p>
+<div class="writing-area medium"><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+
+
+<!-- ═══ SECTION 8: WEEKLY MIND DIARY ═══ -->
+<div class="day-header page-break">
+  <div class="dh-num">Section 8 · खंड 8</div>
+  <h2>Weekly Mind Diary · साप्ताहिक मन डायरी</h2>
+</div>
+
+<table class="wb-table">
+  <tr><th style="width:12%;">Day</th><th style="width:13%;">Manas State (1-10)</th><th style="width:13%;">Buddhi Clarity (1-10)</th><th style="width:13%;">Chitta Calm (1-10)</th><th style="width:13%;">Ahamkara Balance (1-10)</th><th style="width:36%;">Key Insight / मुख्य अंतर्दृष्टि</th></tr>
+  <tr><td>Day 1 Sat</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+  <tr><td>Day 2 Sun</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+  <tr><td>Day 3 Mon</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+  <tr><td>Day 4 Tue</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+  <tr><td>Day 5 Wed</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+  <tr><td>Day 6 Thu</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+  <tr><td>Day 7 Fri</td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write" style="text-align:center;"></td><td class="write"></td></tr>
+</table>
+
+<div class="writing-area medium" style="margin-top:15px;"><div class="wa-label">What changed in me this week? / इस सप्ताह मुझमें क्या बदला?</div><div class="writing-lines"><div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div></div></div>
+
+<!-- ═══ NOTES ═══ -->
+<div class="notes-page page-break">
+  <h2>Notes · नोट्स</h2>
+  <div class="notes-lines"><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div></div>
+</div>
+<div class="notes-page page-break">
+  <h2>Notes · नोट्स</h2>
+  <div class="notes-lines"><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div><div class="nl"></div></div>
+</div>
+
+<div class="wb-footer">
+  <div class="wf-brand">Inner Zen Wellness Program</div>
+  <div class="wf-tag">Decode · Discover · Transform</div>
+  <div class="wf-copy">Week 1 Student Workbook · Antahkarana Chatushtaya + Hypnotherapy Foundations · Days 1–7<br>Decode Life Transformation Level 1 · Medhavi Skills University, Sikkim (UGC Recognised)<br>© Inner Zen Wellness — All Rights Reserved<br><br>This workbook is freely printable and saveable as PDF for personal study use.</div>
+</div>
+
+</body>
+</html>
